@@ -1,0 +1,94 @@
+/* To ensure your styling works under the Shadow DOM polyfill, see
+   www.polymer-project.org/docs/polymer/styling.html#directives */
+
+:host {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#card {
+    height: 400px;
+    width: 250px;
+    margin: 20px auto;
+    font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, sans-serif;
+}
+#display {
+    box-sizing: border-box;
+    height: 120px;
+    padding: 24px;
+    font-size: 64px;
+    font-weight: 400;
+    color: var(--display-color, #ffffff);
+    background-color: var(--display-background-color, #5264ae);
+}
+#display .digit{
+    padding: 5px;
+    -webkit-transition: .5s cubic-bezier(1,-1.2,0.2,2);
+    -moz-transition: .5s cubic-bezier(1,-1.2,0.2,2);
+    -o-transition: .5s cubic-bezier(1,-1.2,0.2,2);
+    transition: .5s cubic-bezier(1,-1.2,0.2,2);
+}
+#display .digit.active{
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+#display .digit paper-button{
+    min-width: 0;
+    width: 70px;
+    height: 70px;
+    padding: 0px;
+    margin: 0px;
+    font-size: inherit;
+    font-weight: inherit;
+}
+#keypad{
+    box-sizing: border-box;
+    font-size: 42px;
+    font-weight: 300;
+}
+#keypad .digit{
+    flex: 1 0 63px;
+    /* shorthand for
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 63px;*/
+}
+#keypad .digit paper-button[disabled]{
+    color: rgba(0,0,0,0.12);
+    background-color: rgba(0,0,0,0);
+}
+#keypad .digit:nth-child(1){
+    /* we put the 0 at the bottom */
+    order: 10;
+}
+#keypad .digit paper-button{
+    min-width: 0;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+.digit{
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+}
+#button_bar{
+    font-size: 14px;
+}
+#done_button{
+    color: var(--done-button-color, #5264ae);
+}
+#clear_button{
+    color: var(--clear-button-color, #5264ae);
+}
+#done_button, #clear_button{
+    margin: 5px;
+}
